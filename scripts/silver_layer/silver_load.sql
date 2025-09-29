@@ -29,7 +29,7 @@ BEGIN
     ,cst_key
     ,cst_firstname
     ,cst_lastname
-    ,cst_material_status
+    ,cst_marital_status
     ,cst_gndr
     ,cst_create_date
     ,dwh_create_date)
@@ -38,10 +38,10 @@ BEGIN
     ,cst_key
     ,TRIM(cst_firstname) AS cst_firstname
     ,TRIM(cst_lastname) AS cst_lastname
-    ,CASE WHEN UPPER(TRIM(cst_material_status)) = 'S' then 'Single'
-        WHEN UPPER(TRIM(cst_material_status)) = 'M' then 'Married'
+    ,CASE WHEN UPPER(TRIM(cst_marital_status)) = 'S' then 'Single'
+        WHEN UPPER(TRIM(cst_marital_status)) = 'M' then 'Married'
         ELSE 'n/a'
-    END cst_material_status,
+    END cst_marital_status,
     CASE WHEN UPPER(TRIM(cst_gndr)) = 'F' then 'Female'
         WHEN UPPER(TRIM(cst_gndr)) = 'M' then 'Male'
         ELSE 'n/a'
@@ -191,4 +191,5 @@ BEGIN
 
 END;
 $$;
+
 
